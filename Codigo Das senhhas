@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #mensagemErro {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digite a senha</h2>
+    <input type="text" id="senha" placeholder="Digite a senha">
+    <button onclick="verificarSenha()">Entrar</button>
+    <p id="mensagemErro"></p>
+
+    <script>
+        function verificarSenha() {
+            var senhaDigitada = document.getElementById("senha").value.trim();
+            var mensagemErro = document.getElementById("mensagemErro");
+            
+            var senhas = {
+                "Romanos 16:3-4": "https://docs.google.com/forms/d/e/1FAIpQLSeGUsIydc7bZcc1KsaVBa8wEd7QA_1EXwLwe5Q9azGjtT_Jtw/viewform?usp=header",
+                "2025": "https://drive.google.com/file/d/1TxUUZDO0NNnj_gci-gwGWHotphPQZ07O/view?usp=sharing",
+                "Faminto": "https://drive.google.com/file/d/1TreYbI8Eu7Zeyo47c3a4g2HWfxf-LdVN/view?usp=sharing",
+                "Sergiev Posad": "https://drive.google.com/file/d/1FN9_R9jniEox_4B4Ay3dUC_43LHicSXj/view?usp=sharing",
+                "Áquila": "https://drive.google.com/file/d/12tzCcnSk7epVVcYz0cE4ZDEQQfK83eP1/view?usp=sharing"
+            };
+            
+            if (senhas[senhaDigitada]) {
+                window.location.href = senhas[senhaDigitada];
+            } else {
+                mensagemErro.innerText = "Os Enjaulados Sabem";
+                mensagemErro.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
